@@ -369,6 +369,7 @@ export default {
       }
     },
     addComponent(item) {
+      console.log(item)
       const clone = this.cloneComponent(item)
       this.fetchData(clone)
       this.drawingList.push(clone)
@@ -517,7 +518,7 @@ export default {
     structureChangeUpdateDrawingList(args) {
       const [from, to, position] = args
       if (position !== 'none') {
-        this.drawingList = positionChange(this.drawingList, from.data.__data__, to.data.__data__, position)
+        this.drawingList = positionChange(this.drawingList, from, to, position)
       }
     }
   }

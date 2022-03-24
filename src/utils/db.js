@@ -68,9 +68,10 @@ export function saveActiveData(obj) {
 function findfromData(list, id) {
   if (list !== undefined) {
     list.forEach((item, index, arr) => {
+      // console.log(id, item.__config__.renderKey)
       if (item.__config__.renderKey === id) {
         arr.splice(index, 1)
-      } else {
+      } else if (item.__config__.children && item.__config__.children.length) {
         findfromData(item.__config__.children, id)
       }
     })
@@ -79,32 +80,35 @@ function findfromData(list, id) {
 }
 
 function updateListData(dataList, toId, data) {
-  if (dataList !== undefined) {
-    dataList.forEach((item, index, arr) => {
-      if (item.__config__.renderKey === toId) {
-        arr.splice(index, 1, ...data)
-      } else {
-        updateListData(item.__config__.children, toId, data)
+  const copyDataList = JSON.parse(JSON.stringify(dataList))
+  if (dataList !== undefined && dataList.length) {
+    for (let i = 0; i < dataList.length; i++) {
+      if (dataList[i].__config__.renderKey === toId) {
+        copyDataList.splice(i, 1, ...data)
       }
-    })
-  }
-  return dataList
-}
-export function positionChange(dataList, fromData, to, position) {
-  let cacheArr = [to]
-  if (position === 'after') {
-    cacheArr.push(fromData)
-  } else if (position === 'before') {
-    cacheArr.unshift(fromData)
-  } else if (position === 'inner') {
-    console.log(to)
-    if (to.layoutTree) {
-      to.children !== undefined ? to.children.push(fromData) : to.children = [fromData]
-    } else {
-      cacheArr.unshift(fromData)
     }
   }
-  const updateData = findfromData(dataList, fromData.__config__.renderKey)
-  cacheArr = []
-  return updateListData(updateData, to.__config__.renderKey, cacheArr)
+  return copyDataList
+}
+
+//
+
+export function positionChange(dataList, fromData, to, position) {
+  const copyFromData = JSON.parse(JSON.stringify(fromData.data.__data__))
+  const copyTo = JSON.parse(JSON.stringify(to.data.__data__))
+  const cacheArr = [copyTo]
+  if (position === 'after') {
+    cacheArr.push(copyFromData)
+  } else if (position === 'before') {
+    cacheArr.unshift(copyFromData)
+  } else if (position === 'inner') {
+    if (copyTo.__config__.layoutTree) {
+      copyTo.__config__.children !== undefined ? cacheArr[0].__config__.children.push(copyFromData) : cacheArr[0].__config__.children = [copyFromData]
+    } else {
+      cacheArr.unshift(copyFromData)
+    }
+  }
+  const updateData = findfromData(dataList, copyFromData.__config__.renderKey)
+  return updateListData(updateData, copyTo.__config__.renderKey, cacheArr)
+  // return updateData
 }
