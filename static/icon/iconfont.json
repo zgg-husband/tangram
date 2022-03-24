@@ -1,0 +1,254 @@
+{
+  "id": "3268079",
+  "name": "七巧板",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "28413054",
+      "name": "网格布局-01",
+      "font_class": "wanggebuju-01",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "28413055",
+      "name": "列布局-01",
+      "font_class": "liebuju-01",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "28413056",
+      "name": "行布局-01",
+      "font_class": "hangbuju-01",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "28412830",
+      "name": "下拉选择-01",
+      "font_class": "xialaxuanze-01",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "28412831",
+      "name": "日期范围-01",
+      "font_class": "riqifanwei-01",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "28412832",
+      "name": "级联选择-01",
+      "font_class": "jilianxuanze-01",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "28412834",
+      "name": "积分-绑定手机-01",
+      "font_class": "jifen-bangdingshouji-01",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "28412835",
+      "name": "计数器-01",
+      "font_class": "jishuqi-01",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "28412801",
+      "name": "编辑器-01",
+      "font_class": "bianjiqi-01",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "28412802",
+      "name": "查看-01",
+      "font_class": "chakan-01",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "28412803",
+      "name": "多选-01",
+      "font_class": "duoxuan-01",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "28412805",
+      "name": "关闭-01",
+      "font_class": "guanbi-01",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "28412806",
+      "name": "关 闭-01",
+      "font_class": "a-guanbi-01",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "28412807",
+      "name": "滑块-01",
+      "font_class": "huakuai-01",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "28412808",
+      "name": "模板-01",
+      "font_class": "moban-01",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "28412809",
+      "name": "导出-01",
+      "font_class": "daochu-01",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "28412810",
+      "name": "开关-关-01",
+      "font_class": "kaiguan-guan-01",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "28412811",
+      "name": "多行文本-01",
+      "font_class": "duohangwenben-01",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "28412812",
+      "name": "清空-01",
+      "font_class": "qingkong-01",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "28412813",
+      "name": "评分-01",
+      "font_class": "pingfen-01",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "28412814",
+      "name": "密码-01",
+      "font_class": "mima-01",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "28412815",
+      "name": "刷新-01",
+      "font_class": "shuaxin-01",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "28412816",
+      "name": "复制-01",
+      "font_class": "fuzhi-01",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "28412817",
+      "name": "按钮-01",
+      "font_class": "anniu-01",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "28412818",
+      "name": "元件库-01",
+      "font_class": "yuanjianku-01",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "28412819",
+      "name": "上传-01",
+      "font_class": "shangchuan-01",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "28412821",
+      "name": "组件库-01",
+      "font_class": "zujianku-01",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "28412822",
+      "name": "时间选择-01",
+      "font_class": "shijianxuanze-01",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "28412823",
+      "name": "单选选中-01",
+      "font_class": "danxuanxuanzhong-01",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "28412824",
+      "name": "运行-01",
+      "font_class": "yunhang-01",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "28412825",
+      "name": "时间范围-01",
+      "font_class": "shijianfanwei-01",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "28412826",
+      "name": "日期选择-01",
+      "font_class": "riqixuanze-01",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "28412827",
+      "name": "单行文本-01",
+      "font_class": "danhangwenben-01",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "28412828",
+      "name": "新增-01",
+      "font_class": "xinzeng-01",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "28412829",
+      "name": "颜色选择-01",
+      "font_class": "yansexuanze-01",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    }
+  ]
+}
