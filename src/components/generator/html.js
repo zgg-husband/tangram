@@ -114,6 +114,16 @@ const layouts = {
 }
 
 const tags = {
+  amtitle: el => {
+    const {
+      tag
+    } = attrBuilder(el)
+    const content = el.content ? `content="${el.content}"` : ''
+    const beforeColor = el.beforeColor ? `  beforeColor="${el.beforeColor}"` : ''
+    // let child = buildElButtonChild(el)
+    // if (child) child = `\n${child}\n` // 换行
+    return `<${tag} ${beforeColor} ${content} />`
+  },
   'el-button': el => {
     const {
       tag, disabled

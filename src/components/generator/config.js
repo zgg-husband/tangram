@@ -572,12 +572,13 @@ export const layoutComponents = [
         type: 'el',
         logoName: 'row'
       },
+      tag: 'row',
       label: '行容器',
       layoutTree: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/layout#row-attributes'
     },
     type: 'default',
-    justify: 'start',
+    justify: 'flex-start',
     align: 'top'
   },
   {
@@ -691,5 +692,24 @@ export const otherComponents = [
     plain: false,
     circle: false,
     disabled: false
+  },
+  {
+    __config__: {
+      layout: 'colFormItem',
+      tagIcon: {
+        type: 'el',
+        logoName: 'row'
+      },
+      tag: 'amtitle',
+      label: '标题文本',
+      labelWidth: null,
+      showLabel: false,
+      changeTag: true,
+      discardLabel: true,
+      span: 24,
+      document: 'https://element.eleme.cn/#/zh-CN/component/layout#row-attributes'
+    },
+    content: '这是标题',
+    beforeColor: '#E60017'
   }
 ]

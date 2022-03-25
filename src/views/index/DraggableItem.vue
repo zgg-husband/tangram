@@ -28,6 +28,9 @@ const layouts = {
     if (this.formConf.unFocusedComponentBorder) className += ' unfocus-bordered'
     let labelWidth = config.labelWidth ? `${config.labelWidth}px` : null
     if (config.showLabel === false) labelWidth = '0'
+    if (config.tag === 'amtitle') {
+      console.log(currentItem, 'currentItem')
+    }
     return (
       <el-col span={config.span} class={className}
         nativeOnClick={event => { activeItem(currentItem); event.stopPropagation() }}>
@@ -58,11 +61,11 @@ const layouts = {
     // <span class="component-name">{config.componentName}</span>
     return (
       <el-col span={config.span}>
-        <el-row gutter={config.gutter} class={`${className} ${child.length ? 'el-row-have-children' : 'el-row-no-children'}`}
+        <el-row gutter={config.gutter} class={`${className} ${config.children.length ? 'el-row-have-children' : 'el-row-no-children'}`}
           nativeOnClick={event => { activeItem(currentItem); event.stopPropagation() }}>
           <draggable list={config.children || []} animation={340}
-            group="componentsGroup" class={`drag-wrapper ${child.length ? 'drag-wrapper-have-children' : ''}`}>
-            {child.length ? child : <span class='drag-wrapper-Placeholder'></span>}
+            group="componentsGroup" class={`drag-wrapper ${config.children.length ? 'drag-wrapper-have-children' : ''}`}>
+            {config.children.length ? child : <span class='drag-wrapper-Placeholder'>往这里拖拽组件</span>}
           </draggable>
           {components.itemBtns.apply(this, arguments)}
         </el-row>

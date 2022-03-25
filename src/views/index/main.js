@@ -6,7 +6,10 @@ import '@/icons'
 import axios from 'axios'
 import Tinymce from '@/components/tinymce/index.vue'
 import '../../../static/iconfont.css'
+import '@/tg-component/css/index.scss'
+import wmrUI from '@/tg-component/lib/index.js'
 
+Vue.use(wmrUI)
 Vue.component('tinymce', Tinymce)
 
 Vue.config.productionTip = false

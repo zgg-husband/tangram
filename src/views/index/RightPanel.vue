@@ -49,7 +49,7 @@
           <el-form-item v-if="activeData.__config__.componentName !== undefined" label="组件名">
             {{ activeData.__config__.componentName }}
           </el-form-item>
-          <el-form-item v-if="activeData.__config__.label !== undefined" label="标题">
+          <el-form-item v-if="activeData.__config__.showLabel" label="标题">
             <el-input v-model="activeData.__config__.label" placeholder="请输入标题" @input="changeRenderKey" />
           </el-form-item>
           <el-form-item v-if="activeData.placeholder !== undefined" label="占位提示">
@@ -97,13 +97,21 @@
               <el-radio-button label="bottom" />
             </el-radio-group>
           </el-form-item>
-          <el-form-item v-if="activeData.__config__.labelWidth !== undefined" label="标签宽度">
+          <el-form-item v-if="activeData.__config__.showLabel" class="cnt-labelWidth" label="标签宽度">
             <el-input v-model.number="activeData.__config__.labelWidth" type="number" placeholder="请输入标签宽度" />
           </el-form-item>
           <el-form-item v-if="activeData.style && activeData.style.width !== undefined" label="组件宽度">
             <el-input v-model="activeData.style.width" placeholder="请输入组件宽度" clearable />
           </el-form-item>
-          <el-form-item v-if="activeData.__vModel__ !== undefined" label="默认值">
+          <el-form-item v-if="activeData.hasOwnProperty('content')" label="文本内容">
+            <el-input v-model="activeData.content" placeholder="请输入文本内容" clearable />
+          </el-form-item>
+          <el-form-item v-if="activeData.hasOwnProperty('content')" label="before颜色">
+            <el-input v-model="activeData.beforeColor" placeholder="请输入文本内容" clearable>
+              <el-color-picker slot="append" v-model="activeData.beforeColor" size="mini" />
+            </el-input>
+          </el-form-item>
+          <el-form-item v-if="activeData.__config__.defaultValue !== undefined" label="默认值">
             <el-input
               :value="setDefaultValue(activeData.__config__.defaultValue)"
               placeholder="请输入默认值"
@@ -419,7 +427,7 @@
           </el-form-item>
 
           <el-form-item
-            v-if="activeData.__config__.showLabel !== undefined && activeData.__config__.labelWidth !== undefined"
+            v-if="(!activeData.__config__.discardLabel)"
             label="显示标签"
           >
             <el-switch v-model="activeData.__config__.showLabel" />
@@ -531,6 +539,14 @@
           <el-form-item v-if="activeData.__config__.required !== undefined" label="是否必填">
             <el-switch v-model="activeData.__config__.required" />
           </el-form-item>
+          <!-- 样式设置 -->
+          <template v-if="activeData.__config__.layout === 'rowFormItem'">
+            <el-divider>样式设置</el-divider>
+            <!-- 边框宽度 -->
+            <!-- 边框类型 -->
+            <!-- 边框颜色 -->
+            <!-- 内外边距 -->
+          </template>
           <!-- 原结构树位置 -->
           <template v-if="Array.isArray(activeData.__config__.regList)">
             <el-divider>正则校验</el-divider>
@@ -589,7 +605,7 @@
               </el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="标签宽度">
+          <el-form-item label="标签宽度" class="fromLabelWidth">
             <el-input v-model.number="formConf.labelWidth" type="number" placeholder="请输入标签宽度" />
           </el-form-item>
           <el-form-item label="栅格间隔">
@@ -607,7 +623,6 @@
         </el-form>
 
         <el-form v-show="currentTab === 'nodeTree'" size="small" label-width="90px">
-          <!-- <template v-if="activeData.__config__.layoutTree"> -->
           <el-tree
             ref="my-tree"
             :data="treeData"
@@ -747,12 +762,12 @@ export default {
       ],
       justifyOptions: [
         {
-          label: 'start',
-          value: 'start'
+          label: 'flex-start',
+          value: 'flex-start'
         },
         {
-          label: 'end',
-          value: 'end'
+          label: 'flex-end',
+          value: 'flex-end'
         },
         {
           label: 'center',

@@ -1,5 +1,7 @@
 $selectedColor: #f6f7ff; //
 $lighterBlue: #409eff;
+$bgColor: rgba(64, 158, 255, 0.1);
+$ds-font-color: rgba(64, 158, 255, 0.3);
 $componentItemColor: #fff;
 $borderColor: #e8e8e8;
 
@@ -314,11 +316,15 @@ $borderColor: #e8e8e8;
     position: relative;
     .drag-wrapper-Placeholder {
       position: absolute;
-      top: calc(50% - 15px);
-      left: calc(50% - 15px);
-      width: 30px;
-      height: 30px;
-      background-color: #eee;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $bgColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $ds-font-color;
     }
   }
   .drag-wrapper-have-children {
@@ -350,10 +356,10 @@ $borderColor: #e8e8e8;
       background: $selectedColor;
       border-radius: 6px;
     }
-    & > .drawing-item-copy,
-    & > .drawing-item-delete {
-      display: initial;
-    }
+    // & > .drawing-item-copy,
+    // & > .drawing-item-delete {
+    //   // display: initial;
+    // }
   }
   & > .drawing-item-copy,
   & > .drawing-item-delete {

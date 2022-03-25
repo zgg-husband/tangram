@@ -64,7 +64,7 @@ export function saveActiveData(obj) {
   })
   localStorage.setItem('drawingItems', activeData)
 }
-
+// 删除移动的节点
 function findfromData(list, id) {
   if (list !== undefined) {
     list.forEach((item, index, arr) => {
@@ -79,12 +79,17 @@ function findfromData(list, id) {
   return list
 }
 
+// 新节点代替原有节点
 function updateListData(dataList, toId, data) {
-  const copyDataList = JSON.parse(JSON.stringify(dataList))
-  if (dataList !== undefined && dataList.length) {
+  let copyDataList = dataList
+  if (dataList !== undefined) {
+    copyDataList = JSON.parse(JSON.stringify(dataList))
     for (let i = 0; i < dataList.length; i++) {
       if (dataList[i].__config__.renderKey === toId) {
         copyDataList.splice(i, 1, ...data)
+        break
+      } if (copyDataList[i].__config__.children !== undefined && copyDataList[i].__config__.children.length) {
+        copyDataList[i].__config__.children = updateListData(copyDataList[i].__config__.children, toId, data)
       }
     }
   }
@@ -93,7 +98,7 @@ function updateListData(dataList, toId, data) {
 
 //
 
-export function positionChange(dataList, fromData, to, position) {
+export function positionChange(dataList, fromData, to, position, event) {
   const copyFromData = JSON.parse(JSON.stringify(fromData.data.__data__))
   const copyTo = JSON.parse(JSON.stringify(to.data.__data__))
   const cacheArr = [copyTo]
@@ -110,5 +115,4 @@ export function positionChange(dataList, fromData, to, position) {
   }
   const updateData = findfromData(dataList, copyFromData.__config__.renderKey)
   return updateListData(updateData, copyTo.__config__.renderKey, cacheArr)
-  // return updateData
 }
