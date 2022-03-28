@@ -13,6 +13,9 @@
           <!-- eslint-disable-next-line -->
           <i class="iconfont icon-moban-01"></i>
           <span>模板库</span>
+          <router-link to="preview">
+            toPreview
+          </router-link>
         </div>
         <!-- eslint-disable-next-line -->
         <i class="el-icon-arrow-right"></i>
@@ -80,9 +83,12 @@
       <div class="action-bar blank-nav">
       </div>
       <div class="action-bar">
+        <el-button icon="el-icon-view" type="text">
+          保存
+        </el-button><i class="btnSeparate">|</i>
         <el-button icon="el-icon-video-play" type="text" @click="run">
           预览
-        </el-button>
+        </el-button><i class="btnSeparate">|</i>
         <!-- <el-button icon="el-icon-view" type="text" @click="showJson">
           查看
         </el-button>

@@ -569,8 +569,8 @@ export const layoutComponents = [
     __config__: {
       layout: 'rowFormItem',
       tagIcon: {
-        type: 'el',
-        logoName: 'row'
+        type: 'fi',
+        logoName: 'icon-rongqi'
       },
       tag: 'row',
       label: '行容器',
@@ -697,8 +697,8 @@ export const otherComponents = [
     __config__: {
       layout: 'colFormItem',
       tagIcon: {
-        type: 'el',
-        logoName: 'row'
+        type: 'fi',
+        logoName: 'icon-biaotilan'
       },
       tag: 'amtitle',
       label: '标题文本',

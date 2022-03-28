@@ -188,10 +188,22 @@ $borderColor: #e8e8e8;
   box-sizing: border-box;
   border: 1px solid $borderColor;
   border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #000;
   // border-left: none;
-  .delete-btn {
-    color: #f56c6c;
+  .btnSeparate {
+    color: #e8e8e8;
+    font-size: 12px;
+    padding: 0 8px;
   }
+  .el-button--text {
+    color: #000;
+  }
+  // .delete-btn {
+  //   color: #f56c6c;
+  // }
 }
 
 .logo-wrapper {

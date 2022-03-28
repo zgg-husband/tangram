@@ -3,7 +3,7 @@
     <el-drawer v-bind="$attrs" v-on="$listeners" @opened="onOpen" @close="onClose">
       <div style="height:100%">
         <el-row style="height:100%;overflow:auto">
-          <!-- <el-col :md="24" :lg="12" class="left-editor">
+          <el-col v-show="false" :md="24" :lg="12" class="left-editor">
             <div class="setting" title="资源引用" @click="showResource">
               <el-badge :is-dot="!!resources.length" class="item">
                 <i class="el-icon-setting" />
@@ -35,7 +35,7 @@
             <div v-show="activeTab==='html'" id="editorHtml" class="tab-editor" />
             <div v-show="activeTab==='js'" id="editorJs" class="tab-editor" />
             <div v-show="activeTab==='css'" id="editorCss" class="tab-editor" />
-          </el-col> -->
+          </el-col>
           <el-col :md="24" :lg="24" class="right-preview">
             <div class="action-bar" :style="{'text-align': 'left'}">
               <span class="bar-btn" @click="runCode">

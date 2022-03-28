@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2471356",
+      "name": "分割线",
+      "font_class": "fengexian",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "11121422",
+      "name": "标题栏",
+      "font_class": "biaotilan",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "12975237",
+      "name": "容器",
+      "font_class": "rongqi",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
       "icon_id": "28413054",
       "name": "网格布局-01",
       "font_class": "wanggebuju-01",
